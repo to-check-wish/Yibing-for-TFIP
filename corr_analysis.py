@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Apr  7 10:30:53 2022
-
-@author: kelly
-"""
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
