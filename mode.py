@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 11 15:11:34 2022
 
-@author: kelly
-"""
 
 DJI_transformed = DJI.diff().dropna()
 GSPC_transformed = GSPC.diff().dropna()
