@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on 2022/3/1 17:05
-@author : zsj
 
-"""
 import requests
 from bs4 import BeautifulSoup
 import datetime
@@ -13,7 +9,7 @@ import multiprocessing
 import random
 import os
 
-# path = os.path.split(os.path.abspath(__file__))[0] + os.sep  # 获取当前文件所在目录
+# path = os.path.split(os.path.abspath(__file__))[0] + os.sep  
 path = 'F:\\'
 data_folder = path + 'gkg' + os.sep
 
@@ -46,10 +42,10 @@ def generate_url_list():
 def get_url_data(url):
     global data_folder
     if not os.path.exists(data_folder):
-        os.mkdir(data_folder)  # 若文件夹不存在，则主动创建
-    filename = url.split('/')[-1]  # 从url链接中获取文件名称
+        os.mkdir(data_folder)  
+    filename = url.split('/')[-1]  
     filepath = data_folder + filename
-    if os.path.exists(filepath) or os.path.exists(filepath[:-4]):  # 若文件已下载，则跳过
+    if os.path.exists(filepath) or os.path.exists(filepath[:-4]):  
         print('文件%s已存在' % filename)
         return
     print(filename)
@@ -58,10 +54,10 @@ def get_url_data(url):
         with open(filepath, "wb") as f:
             f.write(data.content)
         fz = zipfile.ZipFile(filepath, 'r')
-        fz.extract(fz.namelist()[0], data_folder) #解压下载下来的zip文件夹
+        fz.extract(fz.namelist()[0], data_folder) 
         fz.close()
         if os.path.exists(filepath):
-            os.remove(filepath)  # 删除zip文件夹，只保存解压后的数据
+            os.remove(filepath)  
     except Exception as e:
         print(e)
         log = open(path + 'log.txt', 'a')
@@ -72,7 +68,7 @@ def download():
     # print('获取文件链接', datetime.now())
     url_list = generate_url_list()
     # print('下载文件数据', datetime.now())
-    pool = multiprocessing.Pool()  # 开启进程池，使用多进程提高下载速度
+    pool = multiprocessing.Pool()  
     pool.map(get_url_data, url_list)
 
 if __name__ == '__main__':
