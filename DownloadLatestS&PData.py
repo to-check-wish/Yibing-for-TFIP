@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on 2022/2/28 16:03
-@author : zsj
-
-"""
-
 import bs4 as bs
 import datetime as dt
 import os
