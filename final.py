@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 12 19:52:28 2022
 
-@author: kelly
-"""
 
 # Importing dependencies
 import numpy as np
